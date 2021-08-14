@@ -1,6 +1,6 @@
+const mongoose = require("mongoose");
 const db = require("../models/");
 const router = require("express").Router();
-const mongoose = require("mongoose");
 
 router.post('/api/workouts/', (req, res) => {
     console.log(req.body)
@@ -25,7 +25,7 @@ router.get('/api/workouts/', (req, res) => {
 
       .then(db => res.json(db))
       .catch(err => res.status(400).json(err));
-      
+
 });
 
 module.exports = router;
