@@ -3,7 +3,7 @@ const db = require("../models/");
 
 router.get('/api/workouts', (req, res) => {
   db.Workout.find({})
-    .then(dbWorkout => {
+    .then(workoutdb => {
       console.log(workoutdb);
       res.json(workoutdb);
     })
@@ -27,7 +27,7 @@ router.put('/api/workouts/:id', (req, res) => {
     { _id: req.params.id },
     { $push: { exercises: req.body } }
   )
-    .then(dbWorkout => {
+    .then(workoutdb => {
       res.json(workoutdb);
     })
     .catch(err => {
